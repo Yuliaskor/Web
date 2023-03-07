@@ -46,11 +46,11 @@ class Example_Subs_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Example Sub', 'exam_domain' );
-        $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'techguyweb', 'yts_domain' ); 
+        $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'GoogleDevelopers', 'exam_domain' ); 
 
-        $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'yts_domain' ); 
+        $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'exam_domain' ); 
   
-        $count = ! empty( $instance['count'] ) ? $instance['count'] : esc_html__( 'default', 'yts_domain' ); 
+        $count = ! empty( $instance['count'] ) ? $instance['count'] : esc_html__( 'default', 'exam_domain' ); 
 		?>
 		
      <!-- TITLE -->
@@ -70,7 +70,7 @@ class Example_Subs_Widget extends WP_Widget {
       <!-- CHANNEL -->
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'channel' ) ); ?>">
-          <?php esc_attr_e( 'Channel:', 'yts_domain' ); ?>
+          <?php esc_attr_e( 'Channel:', 'exam_domain' ); ?>
         </label> 
 
         <input 
@@ -84,7 +84,7 @@ class Example_Subs_Widget extends WP_Widget {
       <!-- LAYOUT -->
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>">
-          <?php esc_attr_e( 'Layout:', 'yts_domain' ); ?>
+          <?php esc_attr_e( 'Layout:', 'exam_domain' ); ?>
         </label> 
 
         <select 
@@ -103,7 +103,7 @@ class Example_Subs_Widget extends WP_Widget {
       <!-- COUNT -->
       <p>
         <label for="<?php echo esc_attr( $this->get_field_id( 'count' ) ); ?>">
-          <?php esc_attr_e( 'Count:', 'yts_domain' ); ?>
+          <?php esc_attr_e( 'Count:', 'exam_domain' ); ?>
         </label> 
 
         <select 

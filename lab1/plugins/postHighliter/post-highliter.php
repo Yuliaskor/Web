@@ -6,7 +6,7 @@
  * Version:           1.0.0
  * Requires at least: 5.0
  * Requires PHP:      7.2
- * Author:            Yuliia Skorbach
+ * Author:            Yuliia Skorbach, Szymon Bak
  * Author URI:        
  */
 

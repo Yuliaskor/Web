@@ -4,7 +4,7 @@ Plugin Name: Example
 Plugin URI: 
 Description: Example
 Version: 0.1.0
-Author: Yuliia Skorbach
+Author: Yuliia Skorbach, Szymon Bak
 Author URI: 
 */
 
