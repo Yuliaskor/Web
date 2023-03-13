@@ -4,6 +4,6 @@
         gap: 2.5rem;
     }
     &__data{
-        text-align: center;
+        @include data
     }
 }

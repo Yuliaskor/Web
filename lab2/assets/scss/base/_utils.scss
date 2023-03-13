@@ -1,0 +1,8 @@
+@mixin title{
+    margin-bottom: var(--mb-0-75);
+}
+
+@mixin data{
+   text-align: center;
+    border-radius: 1rem;
+}
