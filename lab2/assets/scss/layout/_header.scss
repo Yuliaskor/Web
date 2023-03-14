@@ -1,0 +1,35 @@
+@import '../config/variables';
+
+.header {
+    width: 100%;
+    background-color: $body-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-fixed;
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+
+.nav {
+    height: calc($header-height) + 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        column-gap: 2.5rem;
+    }
+    &__logo {
+        color: $title-color;
+        font-weight: $font-bold;
+    }
+
+    &__link {
+        color: $title-color;
+        font-weight: $font-semi-bold;
+    }
+}
+

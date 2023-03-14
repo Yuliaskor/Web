@@ -1,36 +1,18 @@
-/*=============== REUSABLE CSS CLASSES ===============*/
-.section{
+@import '../config/variables';
+
+.section {
     padding: 4.5rem 0 1rem;
     
-    &__title, &__title-center{
-        font-size: var(--h2-font-size);
-        color: var(--title-color);
+    &__title, &__title-center {
+        font-size: $h2-font-size;
+        color: $title-color;
         text-align: center;
-        margin-bottom: var(--mb-1);
+        margin-bottom: $mb-1;
     }
 }
 
-.svg{
-    &__color{
-        fill: var(--first-color);
-    }
-    &__blob{
-        fill: var(--first-color-light);
-    }
-    &__img{
-        width: 300px;
-        justify-self: center;
-    }
-}
-
-/*=============== LAYOUT ===============*/
-.container{
-    max-width: 968px;
-    margin-left: var(--mb-1-5);
-    margin-right: var(--mb-1-5);
-}
-
-.grid{
-    display: grid;
-    gap: 1.5rem;
+.container {
+    max-width: calc(1000px / 1920px * 100%);
+    margin-left: auto;
+    margin-right: auto;
 }
