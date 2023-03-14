@@ -1,4 +1,4 @@
-@import '../config/variables';
+@import '../base/variables';
 
 .button {
     display: inline-block;
@@ -19,11 +19,11 @@
 
     &-link {
         background: none;
-        padding: 0;
+        padding: 0.35rem;
         color: $title-color;
 
         &:hover {
-            background-color: transparent;
+            background-color: $first-color-alt;
         }
     }
 

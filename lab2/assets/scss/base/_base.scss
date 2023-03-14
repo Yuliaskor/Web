@@ -1,4 +1,7 @@
-@import '../config/variables';
+@import './variables';
+@import './typography';
+@import './colors';
+@import './variables';
 
 *, ::before, ::after {
     box-sizing: border-box;

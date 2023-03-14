@@ -1,16 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 *, ::before, ::after {
   box-sizing: border-box;
   padding: 0;
@@ -95,7 +83,7 @@ img {
   font-weight: 600;
 }
 
-.footer__container, .contact__container, .recipes__container, .trending__container, .about__container, .home__container {
+.card, .footer__container, .contact__container, .recipes__container, .trending__container, .about__container, .home__container {
   display: grid;
   gap: 1.5rem;
 }
@@ -119,7 +107,7 @@ img {
   width: 540px;
 }
 
-.footer__container, .contact__container, .recipes__container, .trending__container, .about__container, .home__container {
+.card, .footer__container, .contact__container, .recipes__container, .trending__container, .about__container, .home__container {
   display: grid;
   gap: 1.5rem;
 }
@@ -139,7 +127,7 @@ img {
   order: -1;
 }
 
-.footer__container, .contact__container, .recipes__container, .trending__container, .home__container, .about__container {
+.card, .footer__container, .contact__container, .recipes__container, .trending__container, .home__container, .about__container {
   display: grid;
   gap: 1.5rem;
 }
@@ -149,7 +137,7 @@ img {
   padding-top: 1rem;
 }
 
-.footer__container, .contact__container, .recipes__container, .home__container, .about__container, .trending__container {
+.card, .footer__container, .contact__container, .recipes__container, .home__container, .about__container, .trending__container {
   display: grid;
   gap: 1.5rem;
 }
@@ -159,7 +147,7 @@ img {
   padding-top: 1rem;
 }
 
-.footer__container, .contact__container, .home__container, .about__container, .trending__container, .recipes__container {
+.card, .footer__container, .contact__container, .home__container, .about__container, .trending__container, .recipes__container {
   display: grid;
   gap: 1.5rem;
 }
@@ -186,7 +174,7 @@ img {
   color: #343434;
 }
 
-.footer__container, .home__container, .about__container, .trending__container, .recipes__container, .contact__container {
+.card, .footer__container, .home__container, .about__container, .trending__container, .recipes__container, .contact__container {
   display: grid;
   gap: 1.5rem;
 }
@@ -252,11 +240,11 @@ img {
 }
 .button-link {
   background: none;
-  padding: 0;
+  padding: 0.35rem;
   color: #353935;
 }
 .button-link:hover {
-  background-color: transparent;
+  background-color: #9898C3;
 }
 .button-flex {
   display: inline-flex;
@@ -268,7 +256,7 @@ img {
   font-size: 1.5rem;
 }
 
-.home__container, .about__container, .trending__container, .recipes__container, .contact__container, .footer__container {
+.card, .home__container, .about__container, .trending__container, .recipes__container, .contact__container, .footer__container {
   display: grid;
   gap: 1.5rem;
 }
@@ -276,7 +264,6 @@ img {
 .card {
   text-align: center;
   border-radius: 1rem;
-  display: grid;
   row-gap: 1rem;
   background-color: #FFF;
   box-shadow: 0px 2px 6px rgba(77, 57, 38, 0.15);
@@ -285,7 +272,6 @@ img {
 .card__img {
   max-width: 250px;
   max-height: 250px;
-  justify-self: center;
   margin-bottom: 0.5rem;
 }
 .card__title {
@@ -294,6 +280,13 @@ img {
 }
 .card__description {
   color: #343434;
+}
+
+img {
+  border-radius: 5%;
+  max-height: 400px;
+  max-width: 400px;
+  justify-self: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
