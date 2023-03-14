@@ -270,8 +270,8 @@ img {
   padding: 2rem 1.5rem;
 }
 .card__img {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 100%;
+  max-height: auto;
   margin-bottom: 0.5rem;
 }
 .card__title {
