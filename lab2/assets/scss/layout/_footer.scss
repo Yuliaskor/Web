@@ -1,0 +1,52 @@
+@import '../base/variables';
+@import './grid';
+
+
+.footer {
+    background-color: lighten($first-color, 20%);
+    padding-bottom: 2rem;
+
+    &__container {
+        @extend %grid;
+        @include column-grid(5);
+        column-gap: 3rem;
+        row-gap: 2rem;
+    }
+
+    &__logo, 
+    &__title {
+        @include title;
+        font-size: $h3-font-size;
+    }
+    &__logo {
+        display: inline-block;
+        font-weight: $font-semi-bold;
+        color: $title-color;
+    }
+    &__link {
+        font-size: $small-font-size;
+    }
+    &__links {
+        display: grid;
+        row-gap: .5rem;
+    }
+    &__link {
+        color: $title-color;
+    }
+    &__social {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 1.5rem;
+
+        &-link {
+            font-size: 1.25rem;
+            color: $title-color;
+        }
+    }
+    &__copy {
+        margin-top: 6rem;
+        text-align: center;
+        font-size: $smaller-font-size;
+        color: $text-color;
+    }
+}

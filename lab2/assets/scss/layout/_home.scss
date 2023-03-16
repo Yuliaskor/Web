@@ -1,0 +1,24 @@
+@import '../base/variables';
+@import './grid';
+
+.home {
+    &__container {
+        @extend %grid;
+        @include column-grid(2);
+        align-items: center;
+        row-gap: 3rem;
+    }
+    &__title {
+        @include title;
+        font-size: $biggest-font-size;
+        font-weight: $font-bold;
+    }
+    &__description {
+        padding-right: 5rem;
+        margin-bottom: $mb-2;
+    }
+    &__img {
+        order: 1;
+        width: 540px;
+    }
+}

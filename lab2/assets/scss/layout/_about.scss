@@ -1,0 +1,19 @@
+@import '../base/variables';
+@import './grid';
+
+.about {
+    &__container {
+        @extend %grid;
+        @include column-grid(2);
+        gap: 2.5rem;
+        column-gap: 6rem;
+        align-items: center;
+    }
+    &__data {
+        @include data;
+        text-align: initial;
+    }
+    &__img {
+        order: -1;
+    }
+}

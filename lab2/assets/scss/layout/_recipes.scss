@@ -1,0 +1,10 @@
+@import '../base/variables';
+@import './grid';
+
+.recipes {
+    &__container {
+        @extend %grid;
+        @include column-grid(2);
+        padding-top: 1rem;
+    }
+}

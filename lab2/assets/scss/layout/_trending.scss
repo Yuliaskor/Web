@@ -1,0 +1,10 @@
+@import '../base/variables';
+@import './grid';
+
+.trending {
+    &__container {
+        @extend %grid;
+        @include column-grid(3);
+        padding-top: 1rem;
+    }
+}
