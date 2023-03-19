@@ -79,3 +79,20 @@
 	font-size: 1.2em;
 	font-weight: 500;
 }
+
+.form-lable{
+	font-weight: 500;
+}
+
+.custom-btn-bg{
+	background-color: #2e6bc1;
+}
+.custom-btn-bg:hover{
+	background-color: #279e8c;
+}
+
+.availability-form{
+	margin-top: -50px;
+	z-index: 2;
+	position: relative;
+}
