@@ -92,13 +92,13 @@
 
 .gradient-custom {
 	/* fallback for old browsers */
-	background: #f6d365;
-	
+	background: rgb(0, 162, 255);
 	/* Chrome 10-25, Safari 5.1-6 */
-	background: -webkit-linear-gradient(to right, rgb(101, 147, 246), rgb(135, 133, 253));
+	background: -webkit-linear-gradient(to right, rgb(0, 162, 255), rgb(42, 42, 114));
 	
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	background: linear-gradient(to right, rgba(135, 133, 253, 1), rgba(135, 133, 253, 1))
+	background: linear-gradient(to right, rgba(0, 162, 255, 1), rgba(42, 42, 114, 1))
+	
 }
 
 .mask{
