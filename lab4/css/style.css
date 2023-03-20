@@ -99,4 +99,8 @@
 	
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background: linear-gradient(to right, rgba(135, 133, 253, 1), rgba(135, 133, 253, 1))
-	}
+}
+
+.mask{
+	background-color: rgba(251, 251, 251, 0.15);
+}
