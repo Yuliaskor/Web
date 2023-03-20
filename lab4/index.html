@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,
-      shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <title>Web Lab 4</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
     <!-- Google Fonts Roboto -->
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+
+    <!-- Bootstrap core CSS
+    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
@@ -29,12 +35,12 @@
             <button
               class="navbar-toggler"
               type="button"
-              data-toggle="collapse"
-              data-target="#navbarTogglerDemo03"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarTogglerDemo03"
               aria-controls="navbarTogglerDemo03"
               aria-expanded="false"
               aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+              <i class="fas fa-bars"></i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -63,13 +69,30 @@
 
       <!-- Banner Image  -->
       <div id="carouselExampleIndicators" class="carousel slide"
-        data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0"
-            class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
+        data-mdb-ride="carousel">
+         <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleIndicators"
+            data-mdb-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleIndicators"
+            data-mdb-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleIndicators"
+            data-mdb-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="info">
@@ -90,16 +113,15 @@
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators"
-          role="button" data-slide="prev">
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators"
-          role="button" data-slide="next">
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
 
@@ -170,14 +192,14 @@
 
 <div class="mt-5">
   <div class="container-xxl">
-  
     <div class="container">
-      <h1 class="mb-4 mb-lg-3">Zerezerwuj podróz <span class="text-primary">Travel</span></h1>
+      <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+      <h1 class="mb-4">Zerezerwuj podróz in <span class="text-primary">Travel</span></h1>
         <section id="lastTravels" class="text-center" >
           <div class="row">
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card  " style="max-width: 23rem;">
-                <div class="view overlay z-depth-1-half" data-mdb-ripple-color="light">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <img src="./img/trip1.jpg" class="img-fluid" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -218,7 +240,7 @@
             
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card  " style="max-width: 23rem;">
-                <div class="view overlay z-depth-1-half" data-mdb-ripple-color="light">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <img src="./img/trip2.jpg" class="img-fluid" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -260,7 +282,7 @@
                
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card  " style="max-width: 23rem;">
-                <div class="view overlay z-depth-1-half" data-mdb-ripple-color="light">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <img src="./img/trip3.jpg" class="img-fluid" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -303,7 +325,7 @@
           <div class="row">
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card  " style="max-width: 23rem;">
-                <div class="view overlay z-depth-1-half" data-mdb-ripple-color="light">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <img src="./img/trip4.jpg" class="img-fluid" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -344,7 +366,7 @@
             
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card  " style="max-width: 23rem;">
-                <div class="view overlay z-depth-1-half" data-mdb-ripple-color="light">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <img src="./img/trips/trip5.jpg" class="img-fluid" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -386,7 +408,7 @@
                
             <div class="col-lg-4 col-md-12 mb-4">
               <div class="card  " style="max-width: 23rem;">
-                <div class="view overlay z-depth-1-half" data-mdb-ripple-color="light">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                   <img src="./img/trips/trip6.jpg" class="img-fluid" />
                   <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -432,103 +454,154 @@
   </div>
 </div>
 
-    <main class="mt-5">
-      <div class="container">
-        <section id="lastTravels" class="text-center">
-          <div class="row">
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="view overlay z-depth-1-half">
-                <img src="img/trips/trip1.jpg" class="img-fluid" alt="">
-                <a href="#!"><div class="mask rgba-blue-light"></div></a>
-              </div>
-              <h4 class="my-4 font-weight-bold">Podróż 1</h4>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                assumenda deleniti hic.</p>
-            </div>
+<!-- blockquote -->
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card">
+          <div class="card-body py-5">
 
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="view overlay z-depth-1-half">
-                <img src="img/trips/trip2.jpg" class="img-fluid" alt="">
-                <a href="#!"><div class="mask rgba-blue-light"></div></a>
+            <!-- Carousel wrapper -->
+            <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-mdb-ride="carousel">
+              <!-- Indicators -->
+              <div class="carousel-indicators mb-0">
+                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="1"
+                  aria-label="Slide 1"></button>
+                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="2"
+                  aria-label="Slide 1"></button>
               </div>
-              <h4 class="my-4 font-weight-bold">Podróż 2</h4>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                assumenda deleniti hic.</p>
-            </div>
 
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="view overlay z-depth-1-half">
-                <img src="img/trips/trip3.jpg" class="img-fluid" alt="">
-                <a href="#!"><div class="mask rgba-blue-light"></div></a>
+              <!-- Inner -->
+              <div class="carousel-inner pt-2 pb-5">
+                <!-- Single item -->
+                <div class="carousel-item active">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-9 col-xl-8">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                            class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90"
+                            height="90">
+                        </div>
+                        <div class="flex-grow-1 ms-4 ps-3">
+                          <figure>
+                            <blockquote class="blockquote mb-4">
+                              <p>
+                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                <span class="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing
+                                  elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt
+                                  minus facere, molestias quisquam impedit inventore.</span>
+                              </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                              Miranda Smith in <cite title="Source Title">The Guardian</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Single item -->
+                <div class="carousel-item">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-9 col-xl-8">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                            class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90"
+                            height="90">
+                        </div>
+                        <div class="flex-grow-1 ms-4 ps-3">
+                          <figure>
+                            <blockquote class="blockquote mb-4">
+                              <p>
+                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                <span class="font-italic">Sed ut perspiciatis unde omnis iste natus error sit
+                                  voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                                  quae ab illo inventore veritatis.</span>
+                              </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                              Annie Hall <cite title="Source Title">New York Times</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Single item -->
+                <div class="carousel-item">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-9 col-xl-8">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                            class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90"
+                            height="90">
+                        </div>
+                        <div class="flex-grow-1 ms-4 ps-3">
+                          <figure>
+                            <blockquote class="blockquote mb-4">
+                              <p>
+                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                <span class="font-italic">At vero eos et accusamus et iusto odio dignissimos
+                                  qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+                                  et quas molestias excepturi sint amet dolore.</span>
+                              </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                              Jason More in <cite title="Source Title">Smash Magazine</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h4 class="my-4 font-weight-bold">Podróż 3</h4>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                assumenda deleniti hic.</p>
+              <!-- Inner -->
+
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant"
+                data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant"
+                data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
+            <!-- Carousel wrapper -->
+
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="view overlay z-depth-1-half">
-                <img src="img/trips/trip4.jpg" class="img-fluid" alt="">
-                <a href="#!"><div class="mask rgba-blue-light"></div></a>
-              </div>
-              <h4 class="my-4 font-weight-bold">Podróż 4</h4>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                assumenda deleniti hic.</p>
-            </div>
-
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="view overlay z-depth-1-half">
-                <img src="img/trips/trip5.jpg" class="img-fluid" alt="">
-                <a href="#!"><div class="mask rgba-blue-light"></div></a>
-              </div>
-              <h4 class="my-4 font-weight-bold">Podróż 5</h4>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                assumenda deleniti hic.</p>
-            </div>
-
-            <div class="col-lg-4 col-md-12 mb-4">
-              <div class="view overlay z-depth-1-half">
-                <img src="img/trips/trip6.jpg" class="img-fluid" alt="">
-                <a href="#!"><div class="mask rgba-blue-light"></div></a>
-              </div>
-              <h4 class="my-4 font-weight-bold">Podróż 6</h4>
-              <p class="grey-text">Lorem ipsum dolor sit amet, consectetur
-                adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                assumenda deleniti hic.</p>
-            </div>
-          </div>
-        </section>
-
-        <hr class="my-5">
-
-        <section id="gallery">
-        </section>
-
-        <hr class="my-5">
-
-        <section id="contact">
-        </section>
+        </div>
       </div>
-    </main>
-
+    </div>
+  </div>
+</section>
     <footer>
 
     </footer>
-    <!-- Bootstrap tooltips -->
+    <!-- Bootstrap tooltips
     <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- jQuery -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    jQuery -->
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script>
+     Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
     <!-- MDB core JavaScript -->
+    <!-- <script type="text/javascript" src="js/mdb.min.js"></script> --> 
+    <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
-
+    <!-- Custom scripts -->
     <script type="text/javascript">
       var nav = document.querySelector('nav');
 
