@@ -194,7 +194,7 @@
   <div class="container-xxl">
     <div class="container">
       <h6 class="section-title bg-white text-start text-primary pe-3">Offers</h6>
-      <h1 class="mb-4">Zerezerwuj podróz in <span class="text-primary">Travel</span></h1>
+      <h1 class="mb-4">Book your trip in <span class="text-primary">Travel</span></h1>
         <section id="lastTravels" class="text-center" >
           <div class="row">
             <div class="col-lg-4 col-md-12 mb-4">
@@ -453,6 +453,19 @@
     </div>
   </div>
 </div>
+
+<!-- chart -->
+<div class="mt-5 mb-5">
+  <div class="container-lg">
+    <h1 class="mb-4">Most popular travel <span class="text-primary">destinations</span></h1>
+    <div class="container text-center">
+      <div class="chart-container" style="position: relative; height:50vh">
+        <canvas id="trip-chart" class="text-center" style="margin: 0 auto"></canvas>
+    </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- FAQ -->
 <div class="mt-5 mb-5">
@@ -839,6 +852,8 @@
     <!-- <script type="text/javascript" src="js/mdb.min.js"></script> --> 
     <!-- MDB -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript">
       var nav = document.querySelector('nav');
@@ -850,6 +865,44 @@
           nav.classList.remove('gradient-custom', 'shadow');
         }
       });
+      const ctx = document.getElementById('trip-chart');
+      const data = {
+          labels: ['Dubai, Uniated Arab Emirates', 'Bali, Indonesia', 'London, United Kingdom',
+           'Rome, Italy', 'Paris, France', 'Cancun, Mexico',
+            'Crete, Greece', 'Marrakech, Morocco', 'Dominican Republic', 'Istanbul, Turkiye'],
+          datasets: [{
+              label: 'Most popular travel destinations',
+                data: [171 ,160, 147, 140, 106, 97, 85, 73, 12, 9],
+                backgroundColor: [
+                  '#EE6352',
+                  '#59CD90',
+                  '#3FA7D6',
+                  '#FAC05E',
+                  '#F79D84',
+                  '#FFF1D0',
+                  '#DBF4A7',
+                  '#D5F9DE',
+                  '#1985A1',
+                  '#79BCB8' 
+                ]
+              }
+          ]
+      };
+
+      const config = {
+          type: 'doughnut',
+          data: data,
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+              }
+          },
+      };
+      new Chart(ctx, config);
     </script>
 
   </body>
