@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>Web Lab 4</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+
+    <!-- Bootstrap core CSS
+    <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- Material Design Bootstrap -->
+    <!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="container-fluid p-0">
+      <div class="row">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+          <div class="container">
+            <a class="navbar-brand" href="#">Travel</a>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#navbarTogglerDemo03"
+              aria-controls="navbarTogglerDemo03"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <div class="mx-auto"></div>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#offer">Offer</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#opinions">Opinions </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Banner Image  -->
+      <div id="carouselExampleIndicators" class="carousel slide"
+        data-mdb-ride="carousel">
+         <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleIndicators"
+            data-mdb-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleIndicators"
+            data-mdb-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-mdb-target="#carouselExampleIndicators"
+            data-mdb-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="info">
+              <h1>SLIDE ONE</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="info">
+              <h1>SLIDE TWO</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="info">
+              <h1>SLIDE THREE</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+            </div>
+          </div>
+        </div>
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Form -->
+
+    <div class="container availability-form">
+      <div class="row alin">
+        <div class="col-lg-12 bg-white shadow p-4 rounded">
+          <h5 class="mb-4">Check Booking Availability</h5>
+          <form>
+            <div class="row align-items-end">
+              <div class="div col-lg-3 mb-3">
+                <label class="form-lable">
+                  Check-in
+                </label>
+                <input type="date" class="form-control shadow-none">
+              </div>
+              <div class="div col-lg-3 mb-3">
+                <label class="form-lable">
+                  Check-out
+                </label>
+                <input type="date" class="form-control shadow-none">
+              </div>
+              <div class="col-lg-2 mb-3">
+                <label class="form-lable">
+                  Adult
+                </label>
+                <input type="number" class="form-control" id="number-input" min="1" max="10" value="1">
+              </div>
+              <div class="col-lg-2 mb-3">
+                <label class="form-lable">
+                  Children
+                </label>
+                <input type="number" class="form-control" id="number-input" min="1" max="10" value="1">
+              </div>
+              <div class="col-lg-1 mb-lg-3 mt-2 ">
+                <button type="button" class="btn btn-primary">
+                    Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- About us -->
+    <div class="container-xxl py-5" id="about">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-9 " data-wow-delay="0.1s" style="min-height: 400px;">
+                  <div class="position-relative h-100">
+                      <img class="img-fluid position-absolute w-100 h-100" src="img/background.jpeg" alt="" style="object-fit: cover;">
+                  </div>
+              </div>
+              <div class="col-lg-3" data-wow-delay="0.3s">
+                  <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                  <h1 class="mb-4">Welcome to <span class="text-primary">Travel</span></h1>
+                  <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                  <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                  <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<!-- Card -->
+
+<div class="mt-5" id="offer">
+  <div class="container-xxl">
+    <div class="container">
+      <h6 class="section-title bg-white text-start text-primary pe-3">Offers</h6>
+      <h1 class="mb-4">Book your trip in <span class="text-primary">Travel</span></h1>
+        <section id="lastTravels" class="text-center" >
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card  " style="max-width: 23rem;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="./img/trips/trip1.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask"></div>
+                  </a> 
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold"><a>Coastal Escape</a></h5>
+                  <ul class="list-unstyled list-inline mb-0">
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"> </i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <p class="text-muted">4.5 (413)</p>
+                    </li>
+                  </ul>
+                  <p class="mb-2">$ 136</p>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <hr class="my-4" />
+                  <button type="button" class="btn btn-primary">Button</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card  " style="max-width: 23rem;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="./img/trips/trip2.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask"></div>
+                  </a> 
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold"><a>Coastal Escape</a></h5>
+                  <ul class="list-unstyled list-inline mb-0">
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"> </i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <p class="text-muted">4.5 (413)</p>
+                    </li>
+                  </ul>
+                  <p class="mb-2">$ 136</p>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <hr class="my-4" />
+                  <button type="button" class="btn btn-primary">Button</button>
+                </div>
+              </div>
+            </div>
+
+               
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card  " style="max-width: 23rem;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="./img/trips/trip3.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask"></div>
+                  </a> 
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold"><a>Coastal Escape</a></h5>
+                  <ul class="list-unstyled list-inline mb-0">
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"> </i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <p class="text-muted">4.5 (413)</p>
+                    </li>
+                  </ul>
+                  <p class="mb-2">$ 136</p>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <hr class="my-4" />
+                  <button type="button" class="btn btn-primary">Button</button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card  " style="max-width: 23rem;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="./img/trips/trip4.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask"></div>
+                  </a> 
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold"><a>Coastal Escape</a></h5>
+                  <ul class="list-unstyled list-inline mb-0">
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"> </i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <p class="text-muted">4.5 (413)</p>
+                    </li>
+                  </ul>
+                  <p class="mb-2">$ 136</p>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <hr class="my-4" />
+                  <button type="button" class="btn btn-primary">Button</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card  " style="max-width: 23rem;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="./img/trips/trip5.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask"></div>
+                  </a> 
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold"><a>Coastal Escape</a></h5>
+                  <ul class="list-unstyled list-inline mb-0">
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"> </i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <p class="text-muted">4.5 (413)</p>
+                    </li>
+                  </ul>
+                  <p class="mb-2">$ 136</p>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <hr class="my-4" />
+                  <button type="button" class="btn btn-primary">Button</button>
+                </div>
+              </div>
+            </div>
+
+               
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="card  " style="max-width: 23rem;">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="./img/trips/trip6.jpg" class="img-fluid" />
+                  <a href="#!">
+                    <div class="mask"></div>
+                  </a> 
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold"><a>Coastal Escape</a></h5>
+                  <ul class="list-unstyled list-inline mb-0">
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"> </i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item me-0">
+                      <i class="fas fa-star text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+                    </li>
+                    <li class="list-inline-item">
+                      <p class="text-muted">4.5 (413)</p>
+                    </li>
+                  </ul>
+                  <p class="mb-2">$ 136</p>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                  <hr class="my-4" />
+                  <button type="button" class="btn btn-primary">Button</button>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+        
+    </div>
+  </div>
+</div>
+
+<!-- chart -->
+<div class="mt-5 mb-5">
+  <div class="container-lg">
+    <h1 class="mb-4">Most popular travel <span class="text-primary">destinations</span></h1>
+    <div class="container text-center">
+      <div class="chart-container" style="position: relative; height:50vh">
+        <canvas id="trip-chart" class="text-center" style="margin: 0 auto"></canvas>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FAQ -->
+<div class="mt-5 mb-5">
+  <div class="container-xxl">
+    <div class="container">
+      <h6 class="section-title bg-white text-start text-primary pe-3">FAQ</h6>
+      <h1 class="mb-4">Most asked questions</h1>
+      <div class="accordion" id="accordionExampleY">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOneY">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#collapseOneY" aria-expanded="true" aria-controls="collapseOneY">
+              <i class="fas fa-question-circle fa-sm me-2 opacity-70"></i>Question 1
+            </button>
+          </h2>
+          <div id="collapseOneY" class="accordion-collapse collapse" aria-labelledby="headingOneY"
+            data-mdb-parent="#accordionExampleY">
+            <div class="accordion-body">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio quaerat necessitatibus sit a aut nihil rerum quo voluptatem, tempora quas. Tempora id rerum, perspiciatis laborum officia fuga doloremque corporis blanditiis!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwoY">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#collapseTwoY" aria-expanded="false" aria-controls="collapseTwoY">
+              <i class="fas fa-question-circle fa-sm me-2 opacity-70"></i>Question 2
+            </button>
+          </h2>
+          <div id="collapseTwoY" class="accordion-collapse collapse" aria-labelledby="headingTwoY"
+            data-mdb-parent="#accordionExampleY">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem doloribus repellendus distinctio commodi atque nostrum corrupti qui delectus sapiente tempore, eaque accusamus mollitia culpa illo a iusto nihil assumenda enim!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThreeY">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#collapseThreeY" aria-expanded="false" aria-controls="collapseThreeY">
+              <i class="fas fa-question-circle fa-sm me-2 opacity-70"></i>Question 3
+            </button>
+          </h2>
+          <div id="collapseThreeY" class="accordion-collapse collapse" aria-labelledby="headingThreeY"
+            data-mdb-parent="#accordionExampleY">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, error nostrum tempore aut unde libero obcaecati eius placeat laborum, tempora doloremque quis ab iure, fuga quisquam? Doloribus, saepe illo. Ipsam!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingFourY">
+            <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+              data-mdb-target="#collapseFourY" aria-expanded="false" aria-controls="collapseFourY">
+              <i class="fas fa-question-circle fa-sm me-2 opacity-70"></i>Question 4
+            </button>
+          </h2>
+          <div id="collapseFourY" class="accordion-collapse collapse" aria-labelledby="headingFourY"
+            data-mdb-parent="#accordionExampleY">
+            <div class="accordion-body">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, error nostrum tempore aut unde libero obcaecati eius placeat laborum, tempora doloremque quis ab iure, fuga quisquam? Doloribus, saepe illo. Ipsam!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- blockquote -->
+<section class="vh-100 gradient-custom" id="opinions">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card">
+          <div class="card-body py-5">
+
+            <!-- Carousel wrapper -->
+            <div id="carouselDarkVariant" class="carousel slide carousel-dark" data-mdb-ride="carousel">
+              <!-- Indicators -->
+              <div class="carousel-indicators mb-0">
+                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="1"
+                  aria-label="Slide 1"></button>
+                <button data-mdb-target="#carouselDarkVariant" data-mdb-slide-to="2"
+                  aria-label="Slide 1"></button>
+              </div>
+
+              <!-- Inner -->
+              <div class="carousel-inner pt-2 pb-5">
+                <!-- Single item -->
+                <div class="carousel-item active">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-9 col-xl-8">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                            class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90"
+                            height="90">
+                        </div>
+                        <div class="flex-grow-1 ms-4 ps-3">
+                          <figure>
+                            <blockquote class="blockquote mb-4">
+                              <p>
+                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                <span class="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing
+                                  elit. Pariatur sint nesciunt ad itaque aperiam expedita officiis incidunt
+                                  minus facere, molestias quisquam impedit inventore.</span>
+                              </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                              Miranda Smith in <cite title="Source Title">The Guardian</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Single item -->
+                <div class="carousel-item">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-9 col-xl-8">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                            class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90"
+                            height="90">
+                        </div>
+                        <div class="flex-grow-1 ms-4 ps-3">
+                          <figure>
+                            <blockquote class="blockquote mb-4">
+                              <p>
+                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                <span class="font-italic">Sed ut perspiciatis unde omnis iste natus error sit
+                                  voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                                  quae ab illo inventore veritatis.</span>
+                              </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                              Annie Hall <cite title="Source Title">New York Times</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Single item -->
+                <div class="carousel-item">
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 col-lg-9 col-xl-8">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                            class="rounded-circle mb-4 mb-lg-0 shadow-2" alt="woman avatar" width="90"
+                            height="90">
+                        </div>
+                        <div class="flex-grow-1 ms-4 ps-3">
+                          <figure>
+                            <blockquote class="blockquote mb-4">
+                              <p>
+                                <i class="fas fa-quote-left fa-lg text-warning me-2"></i>
+                                <span class="font-italic">At vero eos et accusamus et iusto odio dignissimos
+                                  qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
+                                  et quas molestias excepturi sint amet dolore.</span>
+                              </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                              Jason More in <cite title="Source Title">Smash Magazine</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Inner -->
+
+              <!-- Controls -->
+              <button class="carousel-control-prev" type="button" data-mdb-target="#carouselDarkVariant"
+                data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-mdb-target="#carouselDarkVariant"
+                data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <!-- Carousel wrapper -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="mt-5 mb-5" id="contact">
+  <div class="container-xxl">
+    <div class="container">
+      <h1 class="section-title bg-white text-center pe-3">CONTACT <span class="text-primary">US</span></h1>
+      <div>
+        <h6 class="section-title bg-white text-center pe-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit incidunt saepe illum doloremque veniam id dolor autem alias quae voluptates, molestias fugit, officiis cum quas sit quidem, quisquam magnam voluptatum.</h6>
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="form-outline">
+                <input type="text" id="typeText" class="form-control form-control-lg" />
+                <label class="form-label" for="typeText">Name</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-outline">
+                <input type="email" id="typeEmail" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmail">Email</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0">
+                  <div class="p-3 badge-primary rounded-4">
+                    <i class="fas fa-home fa-lg text-primary fa-fw"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <p class="fw-bold mb-1">Address</p>
+                  <p class="text-muted mb-1">
+                    8500, lorem, New Ipsum, Dolor amet sit 12301
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-lg-4">
+              <div class="form-outline">
+                <input type="text" id="typeText" class="form-control form-control-lg" />
+                <label class="form-label" for="typeText">Phone</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-outline">
+                <input type="text" id="typeText" class="form-control form-control-lg" />
+                <label class="form-label" for="typeText">Address</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0">
+                  <div class="p-3 badge-primary rounded-4">
+                    <i class="fas fa-envelope fa-lg text-primary fa-fw"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <p class="fw-bold mb-1">Email Address</p>
+                  <p class="text-muted mb-1">
+                    email@addres.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-lg-8">
+              <div class="form-outline">
+                <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                <label class="form-label" for="textAreaExample">Message</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-flex align-items-start">
+                <div class="flex-shrink-0">
+                  <div class="p-3 badge-primary rounded-4">
+                    <i class="fas fa-phone fa-lg text-primary fa-fw"></i>
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <p class="fw-bold mb-1">Phone</p>
+                  <p class="text-muted mb-1">+12 345 678 900</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-lg-8">
+              <button type="button" class="btn btn-primary btn-block">Send Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+  <section class="d-flex justify-content-center justify-content-lg-between p-3 border-bottom">
+  </section>
+
+  <section class="">
+    <div class="container text-center text-md-start mt-5 mb-3">
+      <div class="row mt-3">
+        <div class="col-lg-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 text-primary"><i class="fas fa-building me-3"></i>Company name</h6>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda officiis tenetur sit, fugiat quisquam incidunt</p>
+          <div>
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <!-- Twitter -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <!-- Instagram -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-dark m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 text-primary">
+            Information
+          </h6>
+          <p><a class="text-reset">Online Enquiry</a></p>
+          <p><a class="text-reset">General Enquiries</a></p>
+          <p><a class="text-reset">Booking Conditions</a></p>
+          <p><a class="text-reset">Privacy Policy</a></p>
+        </div>
+
+        <div class="col-lg-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 text-primary">
+            Experience
+          </h6>
+          <p><a class="text-reset">Adventure</a></p>
+          <p><a class="text-reset">Hotel</a></p>
+          <p><a class="text-reset">Beach</a></p>
+          <p><a class="text-reset">Nature</a></p>
+        </div>
+
+        <div class="col-lg-6 mb-md-0 mb-4">
+          <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10020.15463496811!2d17.0625052!3d51.1077469!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe82a7836289b%3A0xb8f93f04c5c8d70f!2sPolitechnika%20Wroc%C5%82awska!5e0!3m2!1spl!2spl!4v1679348992364!5m2!1spl!2spl" width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2023 Copyright: Yullia Skorbach, Szymon Bąk
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+    <!-- Bootstrap tooltips
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    jQuery -->
+    <!-- <script type="text/javascript" src="js/jquery.min.js"></script>
+     Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
+    <!-- MDB core JavaScript -->
+    <!-- <script type="text/javascript" src="js/mdb.min.js"></script> --> 
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript">
+      var nav = document.querySelector('nav');
+
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add('gradient-custom', 'shadow');
+        } else {
+          nav.classList.remove('gradient-custom', 'shadow');
+        }
+      });
+      const ctx = document.getElementById('trip-chart');
+      const data = {
+          labels: ['Dubai, Uniated Arab Emirates', 'Bali, Indonesia', 'London, United Kingdom',
+           'Rome, Italy', 'Paris, France', 'Cancun, Mexico',
+            'Crete, Greece', 'Marrakech, Morocco', 'Dominican Republic', 'Istanbul, Turkiye'],
+          datasets: [{
+              label: 'Most popular travel destinations',
+                data: [171 ,160, 147, 140, 106, 97, 85, 73, 12, 9],
+                backgroundColor: [
+                  '#EE6352',
+                  '#59CD90',
+                  '#3FA7D6',
+                  '#FAC05E',
+                  '#F79D84',
+                  '#FFF1D0',
+                  '#DBF4A7',
+                  '#D5F9DE',
+                  '#1985A1',
+                  '#79BCB8' 
+                ]
+              }
+          ]
+      };
+
+      const config = {
+          type: 'doughnut',
+          data: data,
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+              }
+          },
+      };
+      new Chart(ctx, config);
+    </script>
+
+  </body>
+</html>
