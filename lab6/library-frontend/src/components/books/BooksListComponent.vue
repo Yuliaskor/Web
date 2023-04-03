@@ -1,8 +1,9 @@
 <template>
+  <div class="container">
     <div class="about">
       <h1>Books</h1>
-      <router-link to="/books/new"><button>Add new book</button></router-link>
-      <table>
+      <router-link to="/books/new"><button class="btn btn-primary mt-3 mb-3" >Add new book</button></router-link>
+      <table class="table table-striped">
         <thead>
           <tr>
             <th>Title</th>
@@ -16,6 +17,7 @@
         </tbody>
       </table>
       </div>
+  </div>
 </template>
 
 <script>

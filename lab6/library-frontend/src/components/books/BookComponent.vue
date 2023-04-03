@@ -5,8 +5,10 @@
         <td>{{ book.publisher }}</td>
         <td>{{ book.publicationYear }}</td>
         <td>
-            <button @click="deleteBook(book.id)">Delete</button>
-            <router-link :to="{ name: 'EditBook', params: { id: book.id } }"><button>Edit Book</button></router-link>
+            <button @click="deleteBook(book.id)" class="btn btn-danger mx-1">
+    <font-awesome-icon icon="trash" /></button>
+            <router-link :to="{ name: 'EditBook', params: { id: book.id } }"><button class="btn btn-secondary mx-1">
+      <font-awesome-icon icon="edit" /></button></router-link>
         </td>
     </tr>
 </template>
