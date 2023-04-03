@@ -1,14 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/components/HomeComponent';
 import BooksList from '@/components/books/BooksListComponent';
 import AddBook from '@/components/books/AddBookComponent';
 import EditBook from '@/components/books/EditBookComponent';
+import AuthorsList from '@/components/authors/AuthorsListComponent';
+import AddAuthor from '@/components/authors/AddAuthorComponent';
+import EditAuthor from '@/components/authors/EditAuthorComponent';
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: { name: 'Books' }
   },
   {
     path: '/books',
@@ -24,6 +25,22 @@ const routes = [
     path: '/books/:id',
     name: 'EditBook',
     component: EditBook,
+    props: true
+  },
+  {
+    path: '/authors',
+    name: 'Authors',
+    component: AuthorsList
+  },
+  {
+    path: '/authors/new',
+    name: 'NewAuthor',
+    component: AddAuthor
+  },
+  {
+    path: '/authors/:id',
+    name: 'EditAuthor',
+    component: EditAuthor,
     props: true
   }
 ]

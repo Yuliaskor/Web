@@ -1,5 +1,6 @@
 <template>
     <tr>
+        <td>{{ book.id }}</td>
         <td>{{ book.title }}</td>
         <td><span v-for="author in book.authors" :key="author.id">{{ author.name }}<br></span></td>
         <td>{{ book.publisher }}</td>

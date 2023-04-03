@@ -1,21 +1,18 @@
 <template>
   <div class="container">
     <div class="about">
-      <h1>Books</h1>
-      <router-link to="/books/new"><button class="btn btn-primary mt-3 mb-3" >Add new book</button></router-link>
+      <h1>Authors</h1>
+      <router-link to="/authors/new"><button class="btn btn-primary mt-3 mb-3" >Add new author</button></router-link>
       <table class="table table-striped">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Title</th>
-            <th>Authors</th>
-            <th>Publisher</th>
-            <th>Publication Year</th>
+            <th>Name</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <BookComponent v-for="book in paginatedBooks" :key="book.id" :book="book"/>
+          <AuthorComponent v-for="author in paginatedAuthors" :key="author.id" :author="author"/>
         </tbody>
       </table>
       <Paginate
@@ -33,7 +30,7 @@
         :next-class="'page-item'"
         :next-link-class="'page-link'"
       />
-        <nav aria-label="Books Pagination">
+        <nav aria-label="Authors Pagination">
         <ul class="pagination">
           <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
             <button class="page-link" @click="currentPage -= 1">Previous</button>
@@ -51,41 +48,41 @@
 </template>
 
 <script>
-import BookComponent from './BookComponent'
+import AuthorComponent from './AuthorComponent'
 import Paginate from 'vuejs-paginate'
 
 export default {
-  name: 'BooksList',
+  name: 'AuthorsList',
   components: {
-    BookComponent,
+    AuthorComponent,
     paginate: Paginate
   },
   data() {
     return {
-      books: [],
+      authors: [],
       perPage: 10,
       currentPage: 1
     }
   },
   computed: {
     pageCount() {
-      return Math.ceil(this.books.length / this.perPage)
+      return Math.ceil(this.authors.length / this.perPage)
     },
-    paginatedBooks() {
+    paginatedAuthors() {
       const start = (this.currentPage - 1) * this.perPage
       const end = start + this.perPage
-      return this.books.slice(start, end)
+      return this.authors.slice(start, end)
     }
   },
   mounted() {
-    this.getBooks()
+    this.getAuthors()
   },
   methods: {
-    async getBooks() {
+    async getAuthors() {
       try {
-        const response = await fetch('http://localhost:8080/api/v1/book')
+        const response = await fetch('http://localhost:8080/api/v1/authors')
         const data = await response.json()
-        this.books = data
+        this.authors = data
       } catch (error) {
         console.log(error)
       }

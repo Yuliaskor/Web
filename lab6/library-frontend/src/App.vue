@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link>
     <router-link to="/books">Books</router-link>
+    <router-link to="/authors">Authors</router-link>
   </div>
   <router-view/>
 </template>
@@ -11,6 +11,7 @@
 export default {
     name: 'App',
     components: {
+      
     }
 }
 </script>
@@ -37,6 +38,6 @@ export default {
 }
 #nav a.router-link-exact-active {
   color: white;
-  background: crimson;
+  background: #157347;
 }
 </style>
