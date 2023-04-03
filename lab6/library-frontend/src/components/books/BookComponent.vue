@@ -6,7 +6,9 @@
         <td>{{ book.publicationYear }}</td>
         <td>
           <div v-if="book.borrow">
-            <span>Wypożyczona</span>
+            <button @click="returnBook(book.id)" class="btn btn-danger mx-1 mb-3">
+              <font-awesome-icon icon="check" /> Zwróć
+            </button>
           </div>
           <div v-else>
             <button @click="borrowBook(book.id)" class="btn btn-success mx-1 mb-3">
@@ -48,6 +50,17 @@ export default {
       try {
         await fetch('http://localhost:8080/api/v1/rentals/' + bookId + '/1', {
           method: 'POST',
+        });
+        location.reload();
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async returnBook(bookId) {
+      console.log('borrowing book with id ' + bookId);
+      try {
+        await fetch('http://localhost:8080/api/v1/rentals/return/' + bookId + '/1', {
+          method: 'PUT',
         });
         location.reload();
       } catch (error) {
