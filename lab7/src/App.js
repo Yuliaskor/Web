@@ -3,10 +3,10 @@ import axios from 'axios';
 import { createYoga, createSchema } from 'graphql-yoga';
 import { createServer } from 'http';
 
-async function getRestUsersList(){
+async function getUsers() {
     try {
         const users = await axios.get("https://jsonplaceholder.typicode.com/users")
-        console.log(users);
+        // console.log(users);
         return users.data.map(({ id, name, email, username }) => ({
             id: id,
             name: name,
@@ -18,48 +18,55 @@ async function getRestUsersList(){
     }
 }
 
-
-function todoById(parent, args, context, info){ 
-    return todosList.find(todo => todo.id == args.id);
+async function getTodos() {
+    try {
+        const todos = await axios.get("https://jsonplaceholder.typicode.com/todos")
+        // console.log(todos);
+        return todos.data.map(({ id, userId, title, completed }) => ({
+            id: id,
+            title: title,
+            completed: completed,
+            user_id: userId,
+        }))
+    } catch (error) {
+        throw error 
+    }
 }
 
-function userById(parent, args, context, info){
-    return usersList.find(user => user.id == args.id);
-} 
 
+async function todoById(parent, args, context, info) {
+    const todos = await getTodos();
+    return todos.find(todo => todo.id == args.id);
+}
 
-const usersList = [
-    { id: 1, name: "Jan Konieczny", email: "jan.konieczny@wonet.pl", login: "jkonieczny" },
-    { id: 2, name: "Anna Wesołowska", email: "anna.w@sad.gov.pl", login: "anna.wesolowska" },
-    { id: 3, name: "Piotr Waleczny", email: "piotr.waleczny@gp.pl", login: "p.waleczny" }
-];
+async function userById(parent, args, context, info) {
+    const users = await getUsers();
+    return users.find(user => user.id == args.id);
+}
 
-const todosList = [
-    { id: 1, title: "Naprawić samochód", completed: false, user_id: 3 },
-    { id: 2, title: "Posprzątać garaż", completed: true, user_id: 3 },
-    { id: 3, title: "Napisać e-mail", completed: false, user_id: 3 },
-    { id: 4, title: "Odebrać buty", completed: false, user_id: 2 },
-    { id: 5, title: "Wysłać paczkę", completed: true, user_id: 2 },
-    { id: 6, title: "Zamówic kuriera", completed: false, user_id: 3 },
-]; 
+async function getTodosForUser(parent, args, context, info) {
+    const todos = await getTodos();
+    return todos.filter(t => t.user_id == parent.id);
+}
+
+async function getUserForTodo(parent, args, context, info) {
+    const users = await getUsers();
+    return users.find(u => u.id == parent.user_id);
+}
    
 const resolvers = {
     Query: {
-        users: async () => getRestUsersList(),
-        todos: () => todosList,
+        users: () => getUsers(),
+        todos: () => getTodos(),
         todo: (parent, args, context, info) => todoById(parent, args, context, info),
         user: (parent, args, context, info) => userById(parent, args, context, info),
     },
-    User:{
-        todos: (parent, args, context, info) => {
-            return todosList.filter(t => t.user_id == parent.id);
-        }
+    User: {
+        todos: (parent, args, context, info) => getTodosForUser(parent, args, context, info)
     },
-    ToDoItem:{
-        user: (parent, args, context, info) => {
-            return usersList.find(u => u.id == parent.user_id);
-        }
-    },  
+    ToDoItem: {
+        user: (parent, args, context, info) => getUserForTodo(parent, args, context, info)
+    },
 };
 
 const yoga = createYoga({
