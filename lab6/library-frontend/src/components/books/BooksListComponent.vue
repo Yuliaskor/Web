@@ -6,7 +6,7 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>Title</th>
             <th>Authors</th>
             <th>Publisher</th>

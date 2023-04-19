@@ -6,7 +6,7 @@ import { createServer } from 'http';
 async function getUsers() {
     try {
         const users = await axios.get("https://jsonplaceholder.typicode.com/users")
-        // console.log(users);
+        console.log(users);
         return users.data.map(({ id, name, email, username }) => ({
             id: id,
             name: name,
