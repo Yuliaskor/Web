@@ -4,26 +4,36 @@
     const socket = io();
 
     let uname;
+    let userRoom;
     let isTyping = false;
 
     app.querySelector(".join-screen #join-user").addEventListener("click", function(){
         let username = app.querySelector(".join-screen #username").value;
-        if(username.lenght == 0){
+        let room = app.querySelector(".join-screen #chatroom-select").value;
+        if (username === "") {
             return;
         }
-        socket.emit("newuser", username);
+        socket.emit("newuser", {
+            room: room,
+            username: username
+        });
         uname = username;
+        userRoom = room;
         app.querySelector(".join-screen").classList.remove("active");
         app.querySelector(".chat-screen").classList.add("active");
+        app.querySelector(".chat-screen .header .logo").innerHTML = "Chatroom " + room
     });
 
     app.querySelector(".chat-screen #message-input").addEventListener("input", function(){
-        socket.emit("typing", uname);
+        socket.emit("typing", {
+            username: uname,
+            room: userRoom
+        });
     });
     
     app.querySelector(".chat-screen #send-message").addEventListener("click", function(){
         let message = app.querySelector(".chat-screen #message-input").value;
-        if (message == "" || username.lenght == 0) {
+        if (message === "" || username === "") {
             return;
         }
 
@@ -34,7 +44,8 @@
         
         socket.emit("chat", {
             username: uname,
-            text: message
+            text: message,
+            room: userRoom
         });
         app.querySelector(".chat-screen #message-input").value = "";
     });
@@ -52,7 +63,8 @@
 
             socket.emit("image", {
                 username: uname,
-                image: base64String
+                image: base64String,
+                room: userRoom
             });
 
             renderImage("my", {
@@ -64,19 +76,22 @@
     });
 
     app.querySelector(".chat-screen #exit-chat").addEventListener("click", function(){
-        socket.emit("exituser", uname);
+        socket.emit("exituser", {
+            username: uname,
+            room: userRoom
+        });
         window.location.href = window.location.href;
     })
 
-    socket.on("update", function(update){
+    socket.on("update", function(update) {
         renderMessage("update", update);
     })
 
-    socket.on("chat", function(message){
+    socket.on("chat", function(message) {
         renderMessage("other", message);
     })
 
-    socket.on("typingResponse", function(username){
+    socket.on("typingResponse", function(username) {
         let typingEl = app.querySelector(".chat-screen .typing");
         typingEl.innerText = username + " is typing...";
         typingEl.style.display = "block";
@@ -115,7 +130,7 @@
         let typingDiv = app.querySelector(".typing");
         let el;
         let time = new Date().toLocaleString()
-        if (type != "text" && "timestamp" in message) {
+        if (type != "update" && "timestamp" in message) {
             time = message.timestamp
         }
         if(type=="my") {

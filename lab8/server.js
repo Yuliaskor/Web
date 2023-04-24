@@ -15,7 +15,8 @@ let messagesHistory = [];
 function addMessageToHistory(message) {
     const newMessage = {
         username: message.username,
-        timestamp: new Date().toLocaleString()
+        timestamp: new Date().toLocaleString(),
+        room: message.room
     }
     if ("image" in message) {
         newMessage.type = "image"
@@ -25,33 +26,35 @@ function addMessageToHistory(message) {
         newMessage.text = message.text
     }
     messagesHistory.push(newMessage);
-    console.log(newMessage);
 }
 
 io.on("connection", function(socket) {
-    socket.on("newuser", function(username){
-        socket.broadcast.emit("update", username + " joined the conversation");
-        messagesHistory.forEach(message => {
-            socket.emit("history", message);  
-        })
+    socket.on("newuser", function(user){
+        socket.join(user.room);
+        socket.to(user.room).emit("update", user.username + " joined the conversation");
+        messagesHistory
+            .filter(message => message.room == user.room)
+            .forEach(message => {
+                socket.emit("history", message);  
+            })
     });
 
-    socket.on("exituser", function(username){
-        socket.broadcast.emit("update", username + " left the conversation");
+    socket.on("exituser", function(user){
+        socket.to(user.room).emit("update", user.username + " left the conversation");
     });
 
-    socket.on("chat", function(message){
+    socket.on("chat", function(message) {
         addMessageToHistory(message);
-        socket.broadcast.emit("chat", message);
+        socket.to(message.room).emit("chat", message);
     });
 
     socket.on("typing", function(data){
-        socket.broadcast.emit("typingResponse", data)
+        socket.to(data.room).emit("typingResponse", data.username)
     });
 
     socket.on("image", function(message) {
         addMessageToHistory(message);
-        socket.broadcast.emit("image", message);
+        socket.to(message.room).emit("image", message);
     });
 })
 

@@ -76,6 +76,16 @@ body {
     border: none;
 }
 
+.form-input #chatroom-select {
+    padding: 5px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius:5px;
+    border: 1px solid #555;
+    font-size: 20px;
+    color: #111;
+}
+
 .chat-screen .header {
     background: #111;
     height: 50px;
