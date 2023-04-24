@@ -118,6 +118,7 @@ body {
     background: #fff;
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
     padding: 10px;
+    border-radius: 15px;
 }
 
 .chat-screen .messages .message.my-message {
@@ -126,6 +127,11 @@ body {
 
 .chat-screen .messages .message.other-message {
     justify-content: flex-start;
+}
+
+.chat-screen .messages .message > div > img{
+    max-height: 250px;
+    max-width: 250px;
 }
 
 .chat-screen .messages .message .name {
@@ -167,6 +173,7 @@ body {
     flex: 1;
     height: 50px;
     font-size: 18px;
+    padding-left: 10px;
 }
 
 .chat-screen .typebox button {
@@ -177,5 +184,18 @@ body {
     font-size: 16px;
     outline: none;
     border: none;
+    cursor: pointer;
+}
+
+.chat-screen .typebox .image-input {
+    display: flex;
+    width: 60px;
+    background: #111;
+    color: #eee;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-image {
     cursor: pointer;
 }

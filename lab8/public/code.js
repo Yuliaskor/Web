@@ -23,9 +23,10 @@
     
     app.querySelector(".chat-screen #send-message").addEventListener("click", function(){
         let message = app.querySelector(".chat-screen #message-input").value;
-        if(username.lenght == 0){
+        if (message == "" || username.lenght == 0) {
             return;
         }
+
         renderMessage("my", {
             username: uname,
             text: message
@@ -36,6 +37,30 @@
             text: message
         });
         app.querySelector(".chat-screen #message-input").value = "";
+    });
+
+    app.querySelector(".chat-screen #image-file").addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (!/^image\//.test(file.type)) {
+            app.querySelector(".chat-screen #image-file").value = null;
+            return;
+        }
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+
+            socket.emit("image", {
+                username: uname,
+                image: base64String
+            });
+
+            renderImage("my", {
+                username: uname,
+                image: reader.result
+            });
+        };
+        app.querySelector(".chat-screen #image-file").value = null;
     });
 
     app.querySelector(".chat-screen #exit-chat").addEventListener("click", function(){
@@ -57,13 +82,22 @@
         typingEl.style.display = "block";
         setTimeout(function(){
             typingEl.style.display = "none";
-        }, 3000);
+        }, 2000);
     });
+
+    socket.on("image", function(message) {
+        renderImage("other", {
+            username: message.username,
+            image: `data:image/png;base64,${message.image}`
+        });
+    })
 
     function renderMessage(type, message){
         let messageContainer = app.querySelector(".chat-screen .messages");
-        if(type=="my"){
-            let el = document.createElement("div");
+        let typingDiv = app.querySelector(".typing");
+        let el;
+        if(type=="my") {
+            el = document.createElement("div");
             el.setAttribute("class", "message my-message");
             el.innerHTML = `
             <div>
@@ -72,23 +106,47 @@
                 <div class="time">${new Date().toLocaleString()}</div>
             </div>
             `;
-            messageContainer.appendChild(el);
-        } else if (type == "other"){
-            let el = document.createElement("div");
+        } else if (type == "other") {
+            el = document.createElement("div");
             el.setAttribute("class", "message other-message");
             el.innerHTML = `
             <div>
                 <div class="name">${message.username}</div>
                 <div class="text">${message.text}</div>
+                <div class="time">${new Date().toLocaleString()}</div>
             </div>
             `;
-            messageContainer.appendChild(el);
-        } else if (type == "update" ){
-            let el = document.createElement("div");
+        } else if (type == "update" ) {
+            el = document.createElement("div");
             el.setAttribute("class", "update");
             el.innerText = message;
-            messageContainer.appendChild(el);
         }
+        messageContainer.insertBefore(el, typingDiv);
+        messageContainer.scrollTop = messageContainer.scrollHeight - messageContainer.clientHeight;
+    }
+
+    function renderImage(type, message) {
+        let messageContainer = app.querySelector(".chat-screen .messages");
+        let typingDiv = app.querySelector(".typing");
+        let div;
+        let name;
+        if(type=="my") {
+            div = document.createElement("div");
+            div.setAttribute("class", "message my-message");
+            name = "You";
+        } else if (type == "other") {
+            div = document.createElement("div");
+            div.setAttribute("class", "message other-message");
+            name = message.username;
+        }
+        div.innerHTML = `
+            <div>
+                <div class="name">${name}</div>
+                <img src="${message.image}"/>
+                <div class="time">${new Date().toLocaleString()}</div>
+            </div>
+            `;
+        messageContainer.insertBefore(div, typingDiv);
         messageContainer.scrollTop = messageContainer.scrollHeight - messageContainer.clientHeight;
     }
 
