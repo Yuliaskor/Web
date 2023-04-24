@@ -92,10 +92,32 @@
         });
     })
 
+    
+    socket.on("history", function(message) {
+        if (message.type == "text") {
+            if (message.username == uname) {
+                renderMessage("my", message);
+            } else {
+                renderMessage("other", message);
+            }
+        } else if (message.type == "image") {
+            if (message.username == uname) {
+                renderImage("my", message);
+            } else {
+                renderImage("other", message);
+            }
+        }
+    })
+
     function renderMessage(type, message){
+        console.log(message);
         let messageContainer = app.querySelector(".chat-screen .messages");
         let typingDiv = app.querySelector(".typing");
         let el;
+        let time = new Date().toLocaleString()
+        if (type != "text" && "timestamp" in message) {
+            time = message.timestamp
+        }
         if(type=="my") {
             el = document.createElement("div");
             el.setAttribute("class", "message my-message");
@@ -103,7 +125,7 @@
             <div>
                 <div class="name">You</div>
                 <div class="text">${message.text}</div>
-                <div class="time">${new Date().toLocaleString()}</div>
+                <div class="time">${time}</div>
             </div>
             `;
         } else if (type == "other") {
@@ -113,7 +135,7 @@
             <div>
                 <div class="name">${message.username}</div>
                 <div class="text">${message.text}</div>
-                <div class="time">${new Date().toLocaleString()}</div>
+                <div class="time">${time}</div>
             </div>
             `;
         } else if (type == "update" ) {
@@ -130,6 +152,10 @@
         let typingDiv = app.querySelector(".typing");
         let div;
         let name;
+        let time = new Date().toLocaleString()
+        if ("timestamp" in message) {
+            time = message.timestamp
+        }
         if(type=="my") {
             div = document.createElement("div");
             div.setAttribute("class", "message my-message");
@@ -143,7 +169,7 @@
             <div>
                 <div class="name">${name}</div>
                 <img src="${message.image}"/>
-                <div class="time">${new Date().toLocaleString()}</div>
+                <div class="time">${time}</div>
             </div>
             `;
         messageContainer.insertBefore(div, typingDiv);

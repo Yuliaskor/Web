@@ -10,9 +10,30 @@ const io = require("socket.io")(server, {
 
 app.use(express.static(path.join(__dirname+"/public")));
 
+let messagesHistory = [];
+
+function addMessageToHistory(message) {
+    const newMessage = {
+        username: message.username,
+        timestamp: new Date().toLocaleString()
+    }
+    if ("image" in message) {
+        newMessage.type = "image"
+        newMessage.image = `data:image/png;base64,${message.image}`
+    } else if ("text" in message) {
+        newMessage.type = "text"
+        newMessage.text = message.text
+    }
+    messagesHistory.push(newMessage);
+    console.log(newMessage);
+}
+
 io.on("connection", function(socket) {
     socket.on("newuser", function(username){
         socket.broadcast.emit("update", username + " joined the conversation");
+        messagesHistory.forEach(message => {
+            socket.emit("history", message);  
+        })
     });
 
     socket.on("exituser", function(username){
@@ -20,6 +41,7 @@ io.on("connection", function(socket) {
     });
 
     socket.on("chat", function(message){
+        addMessageToHistory(message);
         socket.broadcast.emit("chat", message);
     });
 
@@ -28,6 +50,7 @@ io.on("connection", function(socket) {
     });
 
     socket.on("image", function(message) {
+        addMessageToHistory(message);
         socket.broadcast.emit("image", message);
     });
 })
