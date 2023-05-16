@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Chat</title>
+</head>
+<body>
+    <div class="app">
+        <div class="screen join-screen active">
+            <div class="form">
+                <h2>Join Chatroom</h2>
+                <div class="form-input">
+                    <select name="chatroom" id="chatroom-select">
+                        <option value="1">Chatroom 1</option>
+                        <option value="2">Chatroom 2</option>
+                        <option value="3">Chatroom 3</option>
+                        <option value="4">Chatroom 4</option>
+                        <option value="5">Chatroom 5</option>
+                      </select>
+
+                    <label>Username</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="form-input">
+                    <button id="join-user">Join</button>
+                </div>
+            </div>
+        </div>
+        <div class="screen chat-screen ">
+            <div class="header">
+                <div class="logo">
+                    Chatroom
+                </div>
+                <button id="exit-chat">Exit</button>
+            </div>
+            
+            <div class="messages">
+                <div class="typing"></div>
+            </div>
+            <div class="typebox">
+                <input type="text" id="message-input">
+                <button id="send-message">Send</button>
+                <div class="image-input">
+                    <input type="file" name="uploadfile" id="image-file" style="display:none;"/>
+                    <label for="image-file" id="send-image">
+                        <i class="fa-regular fa-image fa-2xl"></i>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+</body>
+</html>
